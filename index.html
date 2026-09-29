@@ -1,86 +1,166 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أدهم محمد - خدمات إدارة المخازن عن بعد</title>
-<style>
-body{font-family:Tajawal,sans-serif;background:#f8fafc;margin:0;padding:0;color:#0f172a}
-.hero{background:#0f172a;color:white;padding:60px 20px;text-align:center}
-.hero img{width:140px;height:140px;border-radius:50%;border:4px solid #38bdf8;object-fit:cover}
-.hero h1{margin:15px 0 5px;font-size:32px}
-.hero p{color:#94a3b8;font-size:18px}
-.btn{background:#25D366;color:white;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:bold;display:inline-block;margin:10px;font-size:18px}
-.container{max-width:900px;margin:auto;padding:30px 20px}
-.card{background:white;padding:25px;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.08);margin-bottom:20px}
-.price{border:2px solid #0f172a;border-radius:15px;padding:20px;text-align:center;margin:10px;flex:1;min-width:220px}
-.price h3{color:#0f172a}
-.price .num{font-size:36px;font-weight:bold;color:#0ea5e9}
-ul{line-height:2}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تنظيم ومتابعة المخزون عن بعد باستخدام شيتات واضحة وتقارير دورية. خدمة أدهم محمد للمحلات والتجار.">
+  <meta name="theme-color" content="#102a43">
+  <title>أدهم محمد | تنظيم ومتابعة المخازن</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#102a43;--muted:#62758a;--blue:#087eaa;--cyan:#35c5d5;--pale:#e9f8fa;--green:#16865b;--line:#e4edf2;--paper:#fff;--bg:#f4f8fb;--shadow:0 18px 50px rgba(16,42,67,.08)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:'Tajawal',Arial,sans-serif;line-height:1.7}
+    a{color:inherit}
+    .wrap{width:min(1080px,calc(100% - 40px));margin-inline:auto}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#102a43 4%,#123b57 58%,#087eaa);color:#fff;padding:78px 0 84px}
+    .hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.12);border-radius:50%;pointer-events:none}
+    .hero:before{width:440px;height:440px;left:-190px;top:-210px}.hero:after{width:290px;height:290px;left:-115px;top:-135px}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:50px;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#a9edf0;font-weight:700;font-size:15px}
+    .eyebrow:before{content:"";width:8px;height:8px;background:var(--cyan);border-radius:50%;box-shadow:0 0 0 5px rgba(53,197,213,.15)}
+    h1{font-size:clamp(36px,5vw,58px);line-height:1.15;margin:17px 0 12px;letter-spacing:-1px}
+    .hero-copy{max-width:610px;color:#d9e9f0;font-size:19px;margin:0 0 25px}
+    .hero-actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 23px;border-radius:12px;text-decoration:none;font-weight:800;transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:#25d366;color:#073b25;box-shadow:0 9px 24px rgba(37,211,102,.2)}
+    .btn-quiet{color:#fff;border:1px solid rgba(255,255,255,.27)}
+    .hero-note{font-size:14px;color:#b9ceda;margin:16px 0 0}
+    .profile{justify-self:center;position:relative}
+    .profile img{width:190px;height:190px;border-radius:50%;object-fit:cover;border:5px solid rgba(255,255,255,.82);box-shadow:0 18px 50px rgba(0,0,0,.25);background:#d8eaf0}
+    .profile-tag{position:absolute;right:-24px;bottom:10px;background:#fff;color:var(--ink);padding:9px 15px;border-radius:12px;font-size:14px;font-weight:700;box-shadow:var(--shadow);white-space:nowrap}
+    .section{padding:70px 0}
+    .section-heading{text-align:center;max-width:680px;margin:0 auto 35px}
+    .section-kicker{color:var(--blue);font-weight:800;font-size:14px;margin:0 0 5px}
+    h2{font-size:clamp(27px,3vw,36px);line-height:1.25;margin:0 0 10px}
+    .section-heading p,.subtext{color:var(--muted);margin:0;font-size:17px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .feature,.service-card,.sample-card,.price-card,.why-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 24px rgba(16,42,67,.04)}
+    .feature{padding:22px}
+    .feature-icon{width:44px;height:44px;display:grid;place-items:center;background:var(--pale);border-radius:13px;font-size:22px;margin-bottom:12px}
+    .feature h3{font-size:19px;margin:0 0 5px}.feature p{font-size:15px;color:var(--muted);margin:0}
+    .samples-section{background:#eaf2f6}
+    .samples{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+    .sample-card{padding:22px;overflow:hidden}
+    .sample-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:15px}
+    .sample-top h3{font-size:20px;margin:0}.sample-top p{font-size:13px;color:var(--muted);margin:3px 0 0}
+    .demo-label{font-size:12px;font-weight:800;color:#8a5900;background:#fff4d7;border-radius:999px;padding:5px 10px;white-space:nowrap}
+    .sheet{border:1px solid #dce6ec;border-radius:12px;overflow:auto;background:#fff}
+    table{width:100%;border-collapse:collapse;font-size:13px;text-align:right;white-space:nowrap}
+    th{background:#eff7f9;color:#4a6578;font-weight:700}th,td{padding:10px 12px;border-bottom:1px solid #e9eff2}
+    tbody tr:last-child td{border-bottom:0}
+    .qty{font-weight:800;color:var(--green)}.low{color:#bd6a16}
+    .sheet-foot{font-size:12px;color:var(--muted);margin:10px 0 0}
+    .report-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:4px 0 17px}
+    .stat{background:#f3f8fa;padding:10px;border-radius:11px}.stat span{display:block;font-size:12px;color:var(--muted)}.stat strong{font-size:19px}
+    .report-row{display:grid;grid-template-columns:80px 1fr 42px;gap:10px;align-items:center;font-size:13px;margin:11px 0}
+    .bar{height:9px;border-radius:99px;background:#e8eff3;overflow:hidden}.bar i{height:100%;display:block;border-radius:inherit;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+    .service-section{padding-top:66px}
+    .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .service-card{padding:23px}
+    .service-card h3{font-size:20px;margin:0 0 12px}
+    .clean-list{list-style:none;margin:0;padding:0;display:grid;gap:8px;color:#344e62}
+    .clean-list li{position:relative;padding-right:25px}.clean-list li:before{content:"✓";position:absolute;right:0;color:var(--green);font-weight:800}
+    .pricing{padding-top:12px}
+    .price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:820px;margin:0 auto}
+    .price-card{padding:27px;position:relative}
+    .price-card.popular{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .popular-tag{position:absolute;left:18px;top:18px;background:rgba(53,197,213,.16);color:#80e6e8;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:800}
+    .price-card h3{font-size:21px;margin:0 0 5px}.price{font-size:34px;font-weight:800;color:var(--blue);line-height:1.35}.popular .price{color:#70e1e7}
+    .period{font-size:14px;font-weight:600;color:var(--muted)}.popular .period{color:#bfd3df}
+    .price-card>p{color:var(--muted);min-height:48px}.popular>p{color:#d5e3eb}
+    .price-card .btn{margin-top:10px}.price-card:not(.popular) .btn{background:var(--ink);color:#fff}.popular .btn{background:#25d366;color:#073b25}
+    .why-card{max-width:820px;margin:20px auto 0;padding:28px;text-align:center;background:linear-gradient(120deg,#fff,#f0fbfc)}
+    .why-card p{color:#4a6174;font-size:17px;margin:7px 0 16px}
+    .offer{display:inline-block;color:#9b5a00;background:#fff1d0;border-radius:999px;padding:7px 14px;font-weight:800;margin-bottom:13px}
+    .footer{padding:25px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+    @media(max-width:760px){.hero{padding:55px 0 62px}.hero-grid{grid-template-columns:1fr;gap:32px;text-align:center}.profile{grid-row:1}.profile img{width:150px;height:150px}.profile-tag{right:-28px}.hero-actions{justify-content:center}.hero-copy{margin-inline:auto}.features{grid-template-columns:1fr 1fr}.samples{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr}.section{padding:56px 0}}
+    @media(max-width:520px){.wrap{width:min(100% - 28px,1080px)}.hero{padding:43px 0 50px}.hero-copy{font-size:17px}.btn{width:100%;margin:0}.hero-actions{display:grid}.profile img{width:132px;height:132px}.features,.price-grid{grid-template-columns:1fr}.feature{padding:18px}.price-card{padding:23px}.popular-tag{position:static;display:inline-block;margin-bottom:9px}.report-stats{gap:6px}.stat{padding:8px}.stat strong{font-size:17px}.sample-card{padding:17px}.section-heading{margin-bottom:26px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
 </head>
 <body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">تنظيم مخزونك أسهل مما تتخيل</span>
+        <h1>خلي مخزونك واضح<br>وتابع شغلك من مكانك</h1>
+        <p class="hero-copy">أنا أدهم محمد، بساعدك ترتّب مخزنك وتتابع الوارد والمنصرف بشيتات عملية وتقارير سهلة الفهم.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/201027041804?text=%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%8A%D8%A7%20%D8%A3%D8%AF%D9%87%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D9%86%D8%B8%D9%85%20%D9%85%D8%AE%D8%B2%D9%86%D9%8A" target="_blank" rel="noopener noreferrer">📲 كلّمني على واتساب</a>
+          <a class="btn btn-quiet" href="#samples">شوف شكل الشيتات ↓</a>
+        </div>
+        <p class="hero-note">حلول بسيطة وعملية للمحلات والتجار وأصحاب المخازن الصغيرة.</p>
+      </div>
+      <div class="profile">
+        <img src="photo.jpg" alt="صورة أدهم محمد" width="190" height="190">
+        <span class="profile-tag">متابعة مخزون عن بُعد</span>
+      </div>
+    </div>
+  </header>
 
-<div class="hero">
-  <img src="photo.jpg" alt="Adham Mohamed">
-  <h1>أدهم محمد</h1>
-  <p>خبير تنظيم ومتابعة المخازن عن بعد</p>
-  <p>أظبطلك مخزنك وانت في مكانك بشيتات احترافية ومتابعة يومية</p>
-  <br>
-  <a class="btn" href="https://wa.me/201027041804?text=سلام عليكم يا أدهم، عايزك تمسكلي المخزن">📲 كلمني واتساب وابدأ النهاردة</a>
-</div>
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading"><p class="section-kicker">خدمة عملية من أول يوم</p><h2>كل تفاصيل مخزونك في مكان واحد</h2><p>سيستم واضح يساعدك تعرف الموجود، وتتابع الحركة، وتلاحظ النواقص بدري.</p></div>
+        <div class="features">
+          <article class="feature"><div class="feature-icon">📥</div><h3>تسجيل الحركة</h3><p>تسجيل الوارد والمنصرف ومراجعة رصيد كل صنف.</p></article>
+          <article class="feature"><div class="feature-icon">🔔</div><h3>متابعة النواقص</h3><p>حدّد الحد الأدنى لكل صنف وخلي النواقص أوضح.</p></article>
+          <article class="feature"><div class="feature-icon">📊</div><h3>تقارير سهلة</h3><p>ملخصات دورية تساعدك تتابع المخزون وحركته.</p></article>
+        </div>
+      </div>
+    </section>
 
-<div class="container">
+    <section class="section samples-section" id="samples">
+      <div class="wrap">
+        <div class="section-heading"><p class="section-kicker">معاينة شكلية</p><h2>أمثلة توضح شكل المتابعة</h2><p>دي بيانات تجريبية لشرح شكل الشيت والتقرير، وبتتظبط حسب أصناف وطريقة شغلك.</p></div>
+        <div class="samples">
+          <article class="sample-card">
+            <div class="sample-top"><div><h3>شيت حركة المخزون</h3><p>نموذج مبسط لمتابعة الأصناف والأرصدة</p></div><span class="demo-label">بيانات تجريبية</span></div>
+            <div class="sheet"><table><thead><tr><th>الصنف</th><th>وارد</th><th>منصرف</th><th>الرصيد</th></tr></thead><tbody>
+              <tr><td>تيشيرت قطن — أسود</td><td>24</td><td>8</td><td class="qty">16</td></tr>
+              <tr><td>حقيبة صغيرة — بيج</td><td>12</td><td>9</td><td class="low">3 — قرب يخلص</td></tr>
+              <tr><td>كريم مرطب — 100 مل</td><td>30</td><td>11</td><td class="qty">19</td></tr>
+            </tbody></table></div>
+            <p class="sheet-foot">الأرقام والأصناف هنا للمعاينة فقط.</p>
+          </article>
+          <article class="sample-card">
+            <div class="sample-top"><div><h3>ملخص تقرير المتابعة</h3><p>نظرة سريعة على حركة الفترة</p></div><span class="demo-label">بيانات تجريبية</span></div>
+            <div class="report-stats"><div class="stat"><span>أصناف مسجلة</span><strong>48</strong></div><div class="stat"><span>حركات الفترة</span><strong>126</strong></div><div class="stat"><span>أصناف نواقص</span><strong>3</strong></div></div>
+            <div class="report-row"><span>ملابس</span><div class="bar"><i style="width:76%"></i></div><b>76%</b></div>
+            <div class="report-row"><span>إكسسوارات</span><div class="bar"><i style="width:54%"></i></div><b>54%</b></div>
+            <div class="report-row"><span>عناية شخصية</span><div class="bar"><i style="width:38%"></i></div><b>38%</b></div>
+            <p class="sheet-foot">شكل التقرير ومحتواه بيتحددوا حسب احتياج نشاطك.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<h2>🎯 أنا بعملك ايه بالظبط؟</h2>
-<ul>
-<li>✅ أعملك سيستم كامل وارد ومنصرف ورصيد على Excel / Google Sheets</li>
-<li>✅ متابعة يومية للبضاعة اللي داخلة وخارجة من بيتك</li>
-<li>✅ تنبيه لما صنف يقرب يخلص</li>
-<li>✅ جرد شهري وتقرير كامل بالمخزون</li>
-<li>✅ أرتبلك مكان كل حاجة عشان متدورش كتير</li>
-</ul>
-</div>
+    <section class="section service-section">
+      <div class="wrap">
+        <div class="section-heading"><p class="section-kicker">مين يستفيد من الخدمة؟</p><h2>مناسبة لمخازن وأنشطة كتير</h2></div>
+        <div class="service-grid">
+          <article class="service-card"><h3>أقدر أساعدك في</h3><ul class="clean-list"><li>تجهيز شيت وارد ومنصرف ورصيد على Excel أو Google Sheets</li><li>متابعة يومية لحركة البضاعة حسب الاتفاق</li><li>تنبيه بالأصناف اللي قربت توصل للحد الأدنى</li><li>جرد دوري وملخص واضح للمخزون</li><li>تنظيم الأصناف ومواقع تخزينها</li></ul></article>
+          <article class="service-card"><h3>الخدمة مناسبة لـ</h3><ul class="clean-list"><li>محلات الملابس والأحذية أونلاين</li><li>محلات الميكب والإكسسوارات</li><li>تجار الجملة والتوزيع</li><li>أصحاب المخازن الصغيرة والمتوسطة</li><li>أي نشاط محتاج يرتّب حركة بضاعته</li></ul></article>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
-<h2>💼 لمين الخدمة دي؟</h2>
-<ul>
-<li>محلات الملابس والأحذية الأونلاين</li>
-<li>محلات الميكب والإكسسوارات</li>
-<li>تجار جملة الجملة</li>
-<li>أي حد عنده مخزن صغير وملخبط</li>
-</ul>
-</div>
-
-<h2 style="text-align:center">💰 الباقات</h2>
-<div style="display:flex;flex-wrap:wrap;justify-content:center">
-
-<div class="price">
-<h3>باقة البداية</h3>
-<div class="num">500ج</div>
-<p>شيت مخازن احترافي جاهز + فيديو شرح</p>
-<p>مرة واحدة</p>
-<a class="btn" href="https://wa.me/201069961591">اطلبها</a>
-</div>
-
-<div class="price" style="background:#0f172a;color:white">
-<h3 style="color:white">باقة المتابعة ⭐ الأكثر طلبا</h3>
-<div class="num" style="color:#38bdf8">1200ج / شهر</div>
-<p>سيستم + متابعة يومية + تقارير + تنبيهات النواقص</p>
-<a class="btn" href="https://wa.me/201069961591">اشترك دلوقتي</a>
-</div>
-
-</div>
-
-<div class="card" style="text-align:center">
-<h2>ليه تختارني؟</h2>
-<p>أنا شغال أمين مخزن أصلا، يعني فاهم الشغل على أرض الواقع مش كلام كتب. هنظملك الدنيا بأقل تكلفة وانت قاعد في بيتك.</p>
-<p><b>أول عميل ليه خصم 50%!</b></p>
-<a class="btn" href="https://wa.me/201069961591">الحق العرض - كلمني واتساب</a>
-</div>
-
-</div>
-
+    <section class="section pricing">
+      <div class="wrap">
+        <div class="section-heading"><p class="section-kicker">اختار اللي يناسبك</p><h2>باقات واضحة وبسيطة</h2><p>ابدأ بشيت جاهز، أو اختار المتابعة المستمرة.</p></div>
+        <div class="price-grid">
+          <article class="price-card"><h3>باقة البداية</h3><div class="price">500 ج.م</div><p>شيت مخازن جاهز مع فيديو شرح، تدفع مرة واحدة.</p><ul class="clean-list"><li>شيت لتنظيم حركة المخزون</li><li>فيديو يشرح طريقة الاستخدام</li></ul><a class="btn" href="https://wa.me/201069961591" target="_blank" rel="noopener noreferrer">اطلب باقة البداية</a></article>
+          <article class="price-card popular"><span class="popular-tag">الأكثر طلبًا</span><h3>باقة المتابعة</h3><div class="price">1200 ج.م <span class="period">/ شهر</span></div><p>سيستم للمخزون مع متابعة دورية وتقارير وتنبيهات للنواقص.</p><ul class="clean-list"><li>إعداد السيستم ومتابعة يومية</li><li>تقارير وتنبيهات بالنواقص</li></ul><a class="btn" href="https://wa.me/201069961591" target="_blank" rel="noopener noreferrer">اسأل عن باقة المتابعة</a></article>
+        </div>
+        <div class="why-card"><h2>متابعة مبنية على خبرة عملية</h2><p>بشتغل أمين مخزن، وعارف إن النظام لازم يكون واضح وسهل التطبيق وسط الشغل اليومي. نتفق على طريقة تناسب مخزنك قبل ما نبدأ.</p><span class="offer">خصم 50% لأول عميل</span><br><a class="btn btn-primary" href="https://wa.me/201027041804" target="_blank" rel="noopener noreferrer">كلّمني واسأل عن العرض</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap">أدهم محمد · تنظيم ومتابعة المخازن عن بُعد</div></footer>
 </body>
 </html>
